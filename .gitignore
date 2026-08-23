@@ -1,0 +1,4 @@
+target/
+# Keep fixture logs even though the scaffold gitignore ignores *.log
+!examples/*.log
+!tests/**/*.log

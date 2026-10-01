@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" class="theme-noir">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Findr | log analysis from the terminal</title>
+  <meta name="description" content="Findr is a zero-dependency Rust CLI for log analysis. This page is a browser mirror of its parser, filters, percentiles and top-N queries." />
+  <link rel="icon" href="peak-a.svg" />
+  <link rel="stylesheet" href="arvion.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="grid-lines"></div>
+
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">F</span>
+        <span>
+          <span class="brand-word">ARVION <b>/</b> FINDR</span>
+          <span class="brand-sub" style="display:block">log analysis, std only</span>
+        </span>
+      </a>
+      <span class="spacer"></span>
+      <span class="badge mono">Rust 2024</span>
+      <span class="badge">59 tests</span>
+      <a class="btn sm" href="https://github.com/arvion-technology/findr" target="_blank" rel="noopener">GitHub</a>
+    </header>
+
+    <main class="main">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Developer tools / CLI</div>
+          <h1>Findr</h1>
+          <p class="lede">A fast log analysis CLI with no dependencies. Parse JSON lines or key=value logs, filter with expressions, aggregate percentiles and count the top values of any field.</p>
+        </div>
+        <span class="spacer"></span>
+        <div class="row">
+          <span class="badge mono">cargo test</span>
+          <span class="badge">offline build</span>
+        </div>
+      </div>
+
+      <div class="mirror-note">
+        <span class="note-mark">JS mirror</span>
+        <span>This console reimplements the Rust parser, filters and aggregation in the browser so the page stays static. The real implementation is the Rust CLI: <code>cargo run -- stats examples/access.log</code>. Run <code>cargo test</code> to see the same rules tested in Rust.</span>
+      </div>
+
+      <div class="grid findr-grid">
+        <div class="col query-col">
+          <div class="card query-card">
+            <div class="card-head">
+              <div>
+                <div class="card-title">Query</div>
+                <div class="card-sub">Same command shape as the binary</div>
+              </div>
+              <span class="spacer"></span>
+              <span class="badge mono" id="format-badge">JSON lines</span>
+            </div>
+
+            <div class="chips" id="sample-tabs"></div>
+            <div class="tabs command-tabs" id="command-tabs"></div>
+
+            <div id="query-fields" class="query-fields"></div>
+
+            <div class="cli-line">
+              <span class="cli-prompt">$</span>
+              <code id="cli-command">findr stats --field latency examples/access.log</code>
+              <button class="copy-btn" id="copy-cli" title="Copy command" aria-label="Copy command">copy</button>
+            </div>
+
+            <button class="btn primary" id="run">Run query</button>
+          </div>
+
+          <div class="card source-card">
+            <div class="card-head">
+              <div>
+                <div class="card-title">Source</div>
+                <div class="card-sub" id="source-meta">examples/access.log</div>
+              </div>
+              <span class="spacer"></span>
+              <span class="badge" id="source-format">json</span>
+            </div>
+            <div class="source-lines" id="source-preview"></div>
+          </div>
+        </div>
+
+        <div class="card result-card">
+          <div class="card-head">
+            <div>
+              <div class="card-title">Result</div>
+              <div class="card-sub" id="result-meta">Run a query to see output</div>
+            </div>
+            <span class="spacer"></span>
+            <button class="btn sm" id="follow" hidden>Follow</button>
+            <span class="badge" id="result-kind">stats</span>
+          </div>
+
+          <div class="result-stats" id="result-summary"></div>
+          <div class="result-body" id="result-body"></div>
+          <p class="small muted result-note" id="result-note">Mirrored from src/filter.rs and src/stats.rs.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="demo-banner">
+    <span class="brand-mark" style="width:20px;height:20px;font-size:10px;border-radius:6px">F</span>
+    <span>Arvion Labs</span>
+    <span class="sep"></span>
+    <a href="https://arvion-technology.github.io/labs/">All projects</a>
+    <span class="sep"></span>
+    <a href="https://github.com/arvion-technology/findr" target="_blank" rel="noopener">source</a>
+  </div>
+
+  <script src="arvion.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

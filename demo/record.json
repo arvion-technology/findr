@@ -1,0 +1,16 @@
+[
+  { "wait": 1400 },
+  { "wait": 600 },
+  { "click": "#sample-tabs .chip:nth-child(2)" },
+  { "wait": 900 },
+  { "click": "#command-tabs .tab[data-cmd=\"filter\"]" },
+  { "wait": 700 },
+  { "type": ["#expr", "level=error"] },
+  { "wait": 500 },
+  { "click": "#run" },
+  { "wait": 1600 },
+  { "click": "#command-tabs .tab[data-cmd=\"stats\"]" },
+  { "wait": 1100 },
+  { "click": "#command-tabs .tab[data-cmd=\"top\"]" },
+  { "wait": 1500 }
+]

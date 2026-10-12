@@ -1,0 +1,27 @@
+[package]
+name = "findr"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Fast log analysis CLI with no dependencies"
+license = "MIT"
+authors = ["Arvion Technologies <hello@arviontech.net>"]
+repository = "https://github.com/arvion-technology/findr"
+homepage = "https://arvion-technology.github.io/labs/demos/findr/"
+readme = "README.md"
+keywords = ["logs", "cli", "observability"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+
+[[bin]]
+name = "findr"
+path = "src/main.rs"
+
+[lib]
+name = "findr"
+path = "src/lib.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1

@@ -1,0 +1,3 @@
+{"ts":"2026-01-01T10:02:01Z","level":"info","status":200,"latency":30}
+{"ts":"2026-01-01T10:02:02Z","level":"info","status":200,"latency":45
+{"ts":"2026-01-01T10:02:03Z","level":"warn","status":500,"latency":120}

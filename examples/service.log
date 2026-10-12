@@ -1,0 +1,12 @@
+ts=2026-01-01T10:01:01Z level=info status=200 latency=23 msg="request complete" route=/health
+ts=2026-01-01T10:01:02Z level=info status=200 latency=41 msg="request complete" route=/api/orders
+ts=2026-01-01T10:01:03Z level=warn status=503 latency=410 msg="upstream timeout" route=/api/orders
+ts=2026-01-01T10:01:04Z level=info status=200 latency=38 msg="request complete" route=/health
+ts=2026-01-01T10:01:05Z level=error status=500 latency=780 msg="db pool exhausted" route=/api/checkout
+ts=2026-01-01T10:01:06Z level=info status=201 latency=156 msg="order created" route=/api/orders
+ts=2026-01-01T10:01:07Z level=info status=200 latency=29 msg="request complete" route=/health
+ts=2026-01-01T10:01:08Z level=warn status=429 latency=12 msg="rate limited" route=/api/users
+ts=2026-01-01T10:01:09Z level=info status=200 latency=62 msg="request complete" route=/api/users
+ts=2026-01-01T10:01:10Z level=error status=500 latency=640 msg="db pool exhausted" route=/api/checkout
+ts=2026-01-01T10:01:11Z level=info status=200 latency=35 msg="request complete" route=/health
+ts=2026-01-01T10:01:12Z level=info status=200 latency=44 msg="request complete" route=/api/orders
